@@ -1,35 +1,19 @@
 {
   "name": "attendance-backend",
   "version": "1.0.0",
-  "description": "WiFi Attendance Management System Backend",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "vercel-build": "npm install",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": ">=18.x"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavin-211/attendance-backend.git"
   },
-  "keywords": [
-    "attendance",
-    "management",
-    "wifi",
-    "mern"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.5.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2",
-    "express-rate-limit": "^7.1.5"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavin-211/attendance-backend/issues"
   },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
+  "homepage": "https://github.com/kavin-211/attendance-backend#readme",
+  "description": ""
 }

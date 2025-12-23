@@ -1,13 +1,19 @@
-const express = require('express');
-const app = express();
+// Import the http module
+const http = require('http');
 
-app.use(express.json());
-
-app.get('/', (req, res) => {
-    res.json({ message: 'Simple Attendance Backend Server is running!' });
+// Create the server
+const server = http.createServer((req, res) => {
+  // Set response header
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  
+  // Send response
+  res.end('Hello, World!\n');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+// Define the port
+const PORT = 3000;
+
+// Start the server
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
 });

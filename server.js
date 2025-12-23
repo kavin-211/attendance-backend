@@ -13,6 +13,10 @@ app.use(express.json());
 let allowedIPs = [];
 
 // Routes
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to the Attendance Backend API!' });
+});
+
 app.get('/dashboard', (req, res) => {
   res.json({ message: 'Welcome to the Dashboard!' });
 });

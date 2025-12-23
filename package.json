@@ -15,5 +15,12 @@
     "url": "https://github.com/kavin-211/attendance-backend/issues"
   },
   "homepage": "https://github.com/kavin-211/attendance-backend#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.2",
+    "nodemon": "^3.1.11"
+  }
 }

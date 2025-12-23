@@ -1,19 +1,34 @@
-// Import the http module
-const http = require('http');
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
 
-// Create the server
-const server = http.createServer((req, res) => {
-  // Set response header
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  
-  // Send response
-  res.end('Hello, World!\n');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// In-memory storage for allowed IPs (for now)
+let allowedIPs = [];
+
+// Routes
+app.get('/dashboard', (req, res) => {
+  res.json({ message: 'Welcome to the Dashboard!' });
 });
 
-// Define the port
-const PORT = 3000;
+app.post('/add-ip', (req, res) => {
+  const { ip } = req.body;
+  if (!ip) {
+    return res.status(400).json({ message: 'IP address is required' });
+  }
+  if (!allowedIPs.includes(ip)) {
+    allowedIPs.push(ip);
+  }
+  res.json({ message: 'IP added successfully', allowedIPs });
+});
 
 // Start the server
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });
